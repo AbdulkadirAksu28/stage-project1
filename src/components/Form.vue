@@ -17,18 +17,18 @@
             <label class="m-2" for="adress">Adress</label>
             <input id="adress" type="text" class="form-control m-2" placeholder="Your adress">
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-4">
-              <label class="m-2" for="adress">City</label>
-              <input id="city" type="text" class="form-control m-2" placeholder="Your city">
+          <div class="row">
+            <div class="form-group col-md-5">
+              <label class="m-2" for="city">City</label>
+              <input id="city" type="text" class="form-control my-2" placeholder="Your city">
             </div>
             <div class="form-group col-md-4">
-              <label class="m-2" for="Province">Province</label>
-              <input id="Province" type="text" class="form-control m-2" placeholder="Your province">
+              <label class="m-2" for="province">Province</label>
+              <input id="province" type="text" class="form-control mx-3 my-2" placeholder="Your province">
             </div>
-            <div class="form-group col-md-3">
-              <label class="m-2" for="zipcode">Postal code</label>
-              <input id="zipcode" type="number" class="form-control m-2" placeholder="Your postal code">
+            <div class="form-group col-md-2">
+              <label class="m-2" for="zipcode">Zip</label>
+              <input id="zipcode" type="number" class="form-control mx-5 my-2" placeholder="e.g. 3550">
             </div>
           </div>
           <div class="form-group">
@@ -45,6 +45,20 @@
           <div class="form-group">
             <label class="m-2" for="school-adress">School adress</label>
             <input id="school-adress" type="text" class="form-control my-2" placeholder="School adress">
+          </div>
+            <div class="row">
+            <div class="form-group col-md-5">
+              <label class="m-2" for="school-city">City</label>
+              <input id="city" type="text" class="form-control my-2" placeholder="School city">
+            </div>
+            <div class="form-group col-md-4">
+              <label class="m-2" for="school-province">Province</label>
+              <input id="school-rovince" type="text" class="form-control mx-3 my-2" placeholder="School province">
+            </div>
+            <div class="form-group col-md-2">
+              <label class="m-2" for="school-zip">Zip</label>
+              <input id="school-zip" type="number" class="form-control mx-6 my-2" placeholder="e.g. 3500">
+            </div>
           </div>
           <div class="form-group">
             <label class="m-2" for="department">Department</label>
@@ -98,6 +112,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.form-control, .form-select {
+  width: 95%;
+
+}
+.mx-6{
+    margin-right: 2.5rem !important;
+    margin-left: 2.5rem !important;
+}
 h3 {
   margin: 40px 0 0;
 }
