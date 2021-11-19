@@ -1,68 +1,70 @@
 <template>
-  <div>
-    <h5> Internship form </h5>
+  <div class="border border-dark">
     <form novalidate>
       <div class="row">
         <div class="col-md-6">
           <div><strong> Personal Information </strong></div>
           <div class="form-group">
             <label class="m-2" for="name">Name</label>
-            <input id="name" type="text" class="form-control m-2" placeholder="Your name">
+            <input id="name" type="text" class="form-control mb-2" placeholder="Your name">
           </div>
           <div class="form-group">
             <label class="m-2" for="surname">Surname</label>
-            <input id="surname" type="text" class="form-control m-2" placeholder="Your surname">
+            <input id="surname" type="text" class="form-control mb-2" placeholder="Your surname">
           </div>
           <div class="form-group">
             <label class="m-2" for="adress">Adress</label>
-            <input id="adress" type="text" class="form-control m-2" placeholder="Your adress">
+            <input id="adress" type="text" class="form-control mb-2" placeholder="Your adress">
           </div>
           <div class="row">
             <div class="form-group col-md-5">
               <label class="m-2" for="city">City</label>
-              <input id="city" type="text" class="form-control my-2" placeholder="Your city">
+              <input id="city" type="text" class="form-control mb-2" placeholder="Your city">
             </div>
             <div class="form-group col-md-4">
               <label class="m-2" for="province">Province</label>
-              <input id="province" type="text" class="form-control mx-3 my-2" placeholder="Your province">
+              <input id="province" type="text" class="form-control mx-3 mb-2" placeholder="Your province">
             </div>
             <div class="form-group col-md-2">
               <label class="m-2" for="zipcode">Zip</label>
-              <input id="zipcode" type="number" class="form-control mx-5 my-2" placeholder="e.g. 3550">
+              <input id="zipcode" type="number" class="form-control mx-6 mb-2" placeholder="e.g. 3550">
             </div>
           </div>
           <div class="form-group">
             <label class="m-2" for="birth-date">Date of Birth</label>
-            <date-picker v-model="date" type="date" class="form-control m-2"></date-picker>
+            <input type="date" id="start" name="trip-start" class="form-control mb-2" value="2018-07-22" min="1950-01-01" max="2021-11-19">
+          </div>
+          <div class="form-group button mx-1 my-3">
+            <input type="submit" value="Submit" class="btn btn-dark">
           </div>
           </div>
         <div class="col-md-6">
           <div><strong> School Information </strong></div>
             <div class="form-group">
             <label class="m-2" for="school">School name</label>
-            <input id="school" type="text" class="form-control my-2" placeholder="School name">
+            <input id="school" type="text" class="form-control mb-2" placeholder="School name">
           </div>
           <div class="form-group">
             <label class="m-2" for="school-adress">School adress</label>
-            <input id="school-adress" type="text" class="form-control my-2" placeholder="School adress">
+            <input id="school-adress" type="text" class="form-control mb-2" placeholder="School adress">
           </div>
             <div class="row">
             <div class="form-group col-md-5">
               <label class="m-2" for="school-city">City</label>
-              <input id="city" type="text" class="form-control my-2" placeholder="School city">
+              <input id="city" type="text" class="form-control mb-2" placeholder="School city">
             </div>
             <div class="form-group col-md-4">
               <label class="m-2" for="school-province">Province</label>
-              <input id="school-rovince" type="text" class="form-control mx-3 my-2" placeholder="School province">
+              <input id="school-rovince" type="text" class="form-control mx-3 mb-2" placeholder="School province">
             </div>
             <div class="form-group col-md-2">
               <label class="m-2" for="school-zip">Zip</label>
-              <input id="school-zip" type="number" class="form-control mx-6 my-2" placeholder="e.g. 3500">
+              <input id="school-zip" type="number" class="form-control mx-6 mb-2" placeholder="e.g. 3500">
             </div>
           </div>
           <div class="form-group">
             <label class="m-2" for="department">Department</label>
-            <select id="department" class="form-select my-2">
+            <select id="department" class="form-select mb-2">
               <option value="" selected disabled>Choose your department</option>
               <option value="1">Business</option>
               <option value="2">Digital</option>
@@ -75,7 +77,7 @@
           </div>
           <div class="form-group">
             <label class="m-2" for="course">Course</label>
-            <select id="course" class="form-select my-2">
+            <select id="course" class="form-select mb-2">
               <option value="" selected disabled>Choose your course</option>
               <option value="1">Selected department course 1</option>
               <option value="2">Selected department course 2</option>
@@ -93,14 +95,13 @@
 </template>
 
 <script>
-import DatePicker from 'vue3-datepicker'
 export default {
-  name: 'HelloWorld',
+  name: 'Form',
   props: {
     msg: String
   },
   components:{
-    DatePicker
+
   },
   data(){
     return {
@@ -112,6 +113,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.button{
+  text-align: left;
+}
 .form-control, .form-select {
   width: 95%;
 
