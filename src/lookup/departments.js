@@ -1,38 +1,38 @@
 export default[
     {
-        "name": "Bussiness",
+        "name": "Business",
         "courses" : ["Accounting","Finance", "Marketing", "Law practice","Logistics"] 
     },
     {
         "name": "Digital",
-        "courses" : ["Software-management","Systems and Network", "Ai and Robotics", "Full-Stack development"]   
+        "courses" : ["Software-management","Systems and Network", "Ai and Robotics", "Full-Stack development", "Programming"]   
     },
     {
         "name": "Education",
-        "courses" : ["Software-management","Systems and Network", "Ai and Robotics", "Full-Stack development"]   
+        "courses" : ["Educational Kindergarten","Educational Primary Education", "Educational Secondary Education"]   
     },
     {
         "name": "Healthcare",
-        "courses" : ["Software-management","Systems and Network", "Ai and Robotics", "Full-Stack development"]   
+        "courses" : ["Occupational Therapy","Nursing", "Obstetrics"]   
     },
     {
         "name": "School of Arts", 
-        "courses" : ["Software-management","Systems and Network", "Ai and Robotics", "Full-Stack development"]   
+        "courses" : ["Visual Arts","Graphic Design", "Jewelry Design & Forging", "Free Arts"] 
     },
     {
         "name": "Music", 
-        "courses" : ["Software-management","Systems and Network", "Ai and Robotics", "Full-Stack development"]    
+        "courses" : ["Music Management","Music Technology", "Musician"]   
     },
     {
-        "name": "Social work",  
-        "courses" : ["Software-management","Systems and Network", "Ai and Robotics", "Full-Stack development"]   
+        "name": "Social Work",  
+        "courses" : ["Material Work","Human Resources", "Orthopedagogical Guidance"]   
     },
     {
         "name": "Green & Tech",
-        "courses" : ["Software-management","Systems and Network", "Ai and Robotics", "Full-Stack development"]     
+        "courses" : ["Biotechnology","Green Management", "Electromechanics", "Construction"]     
     },
     {
         "name": "Media & Toursim",
-        "courses" : ["Software-management","Systems and Network", "Ai and Robotics", "Full-Stack development"]    
+        "courses" : ["Communication Management","Journalism", "Tourism & Recreation"]     
     }
 ]
