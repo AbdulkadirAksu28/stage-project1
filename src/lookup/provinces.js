@@ -40,7 +40,7 @@ export default[
         "capital": "Wavre"  
     },
     {
-        "name": "Brussels Capital Region",
+        "name": "Brussels",
         "capital": "Brussels city"  
     },
 
