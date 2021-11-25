@@ -1,17 +1,31 @@
 <template>
-  <Form msg="Welcome to our first internship project"/>
+  <body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+      <NavigationBar/>
+      <Form msg="Welcome to our first internship project" />
+    </main>
+    <FooterComponent />
+  </body>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
 </template>
 
 <script>
-import Form from './components/Form.vue'
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+import NavigationBar from "./components/NavigationBar.vue";
+import Form from "./components/Form.vue";
+import FooterComponent from "./components/FooterComponent.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Form
-  }
-}
+    Form,
+    FooterComponent,
+    NavigationBar
+  },
+};
 </script>
 
 <style>
@@ -23,5 +37,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-@import'~bootstrap/dist/css/bootstrap.css'
+@import "~bootstrap/dist/css/bootstrap.css";
 </style>
