@@ -41,7 +41,11 @@
                         placeholder="Your name"
                         v-model="info.name"
                       />
+                      <span class="text-danger" v-if="v$.name.$error"
+                        >{{ v$.name.$errors[0].$message }}
+                      </span>
                     </div>
+
                     <div class="form-group">
                       <label class="m-2" for="surname">Surname</label>
                       <input
@@ -51,7 +55,25 @@
                         placeholder="Your surname"
                         v-model="info.surname"
                       />
+                      <span class="text-danger" v-if="v$.surname.$error"
+                        >{{ v$.surname.$errors[0].$message }}
+                      </span>
                     </div>
+
+                    <div class="form-group">
+                      <label class="m-2" for="email">Email</label>
+                      <input
+                        id="email"
+                        type="text"
+                        class="form-control mb-2"
+                        placeholder="Your email"
+                        v-model="info.email"
+                      />
+                      <span class="text-danger" v-if="v$.email.$error"
+                        >{{ v$.email.$errors[0].$message }}
+                      </span>
+                    </div>
+
                     <div class="form-group">
                       <label class="m-2" for="adress">Adress</label>
                       <input
@@ -61,6 +83,9 @@
                         placeholder="Your adress"
                         v-model="info.adress"
                       />
+                      <span  class="text-danger" v-if="v$.adress.$error"
+                        >{{ v$.adress.$errors[0].$message }}
+                      </span>
                     </div>
                     <div class="row">
                       <div class="form-group col-md-4">
@@ -72,6 +97,9 @@
                           placeholder="Your city"
                           v-model="info.city"
                         />
+                        <span class="small text-danger" v-if="v$.city.$error"
+                          >{{ v$.city.$errors[0].$message }}
+                        </span>
                       </div>
                       <div class="form-group col-md-5">
                         <label class="m-2" for="province">Province</label>
@@ -85,6 +113,9 @@
                             {{ p.name }}
                           </option>
                         </select>
+                        <span class="small text-danger" v-if="v$.province.$error"
+                          >{{ v$.province.$errors[0].$message }}
+                        </span>
                       </div>
                       <div class="form-group col-md-3">
                         <label class="m-2" for="zipcode">Zip</label>
@@ -95,6 +126,9 @@
                           placeholder="e.g.3550"
                           v-model="info.zip"
                         />
+                        <span class="small text-danger" v-if="v$.zip.$error"
+                          >{{ v$.zip.$errors[0].$message }}
+                        </span>
                       </div>
                     </div>
                     <div class="form-group">
@@ -104,17 +138,13 @@
                         id="start"
                         name="trip-start"
                         class="form-control mb-2"
-                        min="1950-01-01"
-                        max="2021-11-19"
+                        min="1980-01-01"
+                        :max="nowDate"
                         v-model="info.birth"
                       />
-                    </div>
-                    <div class="form-group button mt-5">
-                      <input
-                        type="submit"
-                        value="Submit"
-                        class="btn btn-dark"
-                      />
+                      <span class="text-danger" v-if="v$.birth.$error"
+                        >{{ v$.birth.$errors[0].$message }}
+                      </span>
                     </div>
                   </div>
                   <div class="col-md-5">
@@ -128,6 +158,9 @@
                         placeholder="School name"
                         v-model="info.schoolName"
                       />
+                      <span class="text-danger" v-if="v$.schoolName.$error"
+                        >{{ v$.schoolName.$errors[0].$message }}
+                      </span>
                     </div>
                     <div class="form-group">
                       <label class="m-2" for="school-adress"
@@ -140,6 +173,9 @@
                         placeholder="School adress"
                         v-model="info.schoolAdress"
                       />
+                      <span class="text-danger" v-if="v$.schoolAdress.$error"
+                        >{{ v$.schoolAdress.$errors[0].$message }}
+                      </span>
                     </div>
                     <div class="row">
                       <div class="form-group col-md-4">
@@ -151,6 +187,9 @@
                           placeholder="School city"
                           v-model="info.schoolCity"
                         />
+                        <span  class="small text-danger" v-if="v$.schoolCity.$error"
+                          >{{ v$.schoolCity.$errors[0].$message }}
+                        </span>
                       </div>
                       <div class="form-group col-md-5">
                         <label class="m-2" for="school-province"
@@ -166,6 +205,9 @@
                             {{ p.name }}
                           </option>
                         </select>
+                        <span class="small text-danger" v-if="v$.schoolProvince.$error"
+                          >{{ v$.schoolProvince.$errors[0].$message }}
+                        </span>
                       </div>
                       <div class="form-group col-md-3">
                         <label class="m-2" for="school-zip">Zip</label>
@@ -176,6 +218,9 @@
                           placeholder="e.g.3500"
                           v-model="info.schoolZip"
                         />
+                        <span class="small text-danger" v-if="v$.schoolZip.$error"
+                          >{{ v$.schoolZip.$errors[0].$message }}
+                        </span>
                       </div>
                     </div>
                     <div class="form-group">
@@ -197,6 +242,9 @@
                           {{ d.name }}
                         </option>
                       </select>
+                      <span class="text-danger" v-if="v$.department.$error"
+                        >{{ v$.department.$errors[0].$message }}
+                      </span>
                     </div>
                     <div class="form-group">
                       <label class="m-2" for="course">Course</label>
@@ -210,13 +258,27 @@
                           Choose your course
                         </option>
                       </select>
+                      <span class="text-danger" v-if="v$.course.$error"
+                        >{{ v$.course.$errors[0].$message }}
+                      </span>
+                    </div>
+                  </div>
+                  <div class="row all">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5 form-group button mt-4">
+                      <input
+                        @click="submitForm"
+                        type="button"
+                        value="Submit"
+                        class="btn btn-dark"
+                      />
                     </div>
                   </div>
                 </div>
               </form>
-              <div>
+              <!-- <div>
                 <pre>{{ info }}</pre>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -266,9 +328,11 @@
 
 
 <script>
-import { ref } from "vue";
+import { computed, reactive } from "vue";
 import provinces from "@/lookup/provinces";
 import departments from "@/lookup/departments";
+import useVuelidate from "@vuelidate/core";
+import { required, email, alpha, numeric } from "@vuelidate/validators";
 
 export default {
   name: "Form",
@@ -278,7 +342,43 @@ export default {
   components: {},
   data() {
     return {
-      date: "",
+      nowDate: new Date().toISOString().slice(0,10)
+    };
+  },
+  setup() {
+    const info = reactive({
+      name: "",
+      surname: "",
+      email: "",
+      birth: "",
+    });
+
+    const rules = computed(() => {
+      return {
+        name: { required, alpha },
+        surname: { required, alpha },
+        email: { required, email },
+        adress: { required },
+        city: { required },
+        province: { required },
+        birth: { required },
+        zip: { required, numeric },
+        schoolName: { required },
+        schoolAdress: { required, alpha },
+        schoolCity: { required },
+        schoolProvince: { required },
+        schoolZip: { required, numeric },
+        department: { required },
+        course: { required },
+      };
+    });
+
+    const v$ = useVuelidate(rules, info);
+    return {
+      provinces,
+      departments,
+      info,
+      v$,
     };
   },
   methods: {
@@ -298,16 +398,17 @@ export default {
         select.appendChild(el);
       }
     },
-  },
-  setup() {
-    const info = ref({
-      birth: "1998-08-02",
-    });
-    return {
-      info,
-      provinces,
-      departments
-    };
+    submitForm() {
+      console.log(this.v$);
+      this.v$.$validate();
+      if (!this.v$.$error) {
+        window.location.reload();
+        // console.log(info)
+      } 
+      // else {
+      //   alert("fail");
+      // }
+    },
   },
 };
 </script>
@@ -321,6 +422,9 @@ export default {
   height: 3rem;
   width: 3rem;
   font-size: 1.5rem;
+}
+.small {
+  font-size: 13px;
 }
 
 .button {
