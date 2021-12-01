@@ -83,7 +83,7 @@
                         placeholder="Your adress"
                         v-model="info.adress"
                       />
-                      <span  class="text-danger" v-if="v$.adress.$error"
+                      <span class="text-danger" v-if="v$.adress.$error"
                         >{{ v$.adress.$errors[0].$message }}
                       </span>
                     </div>
@@ -113,7 +113,9 @@
                             {{ p.name }}
                           </option>
                         </select>
-                        <span class="small text-danger" v-if="v$.province.$error"
+                        <span
+                          class="small text-danger"
+                          v-if="v$.province.$error"
                           >{{ v$.province.$errors[0].$message }}
                         </span>
                       </div>
@@ -187,7 +189,9 @@
                           placeholder="School city"
                           v-model="info.schoolCity"
                         />
-                        <span  class="small text-danger" v-if="v$.schoolCity.$error"
+                        <span
+                          class="small text-danger"
+                          v-if="v$.schoolCity.$error"
                           >{{ v$.schoolCity.$errors[0].$message }}
                         </span>
                       </div>
@@ -205,7 +209,9 @@
                             {{ p.name }}
                           </option>
                         </select>
-                        <span class="small text-danger" v-if="v$.schoolProvince.$error"
+                        <span
+                          class="small text-danger"
+                          v-if="v$.schoolProvince.$error"
                           >{{ v$.schoolProvince.$errors[0].$message }}
                         </span>
                       </div>
@@ -218,7 +224,9 @@
                           placeholder="e.g.3500"
                           v-model="info.schoolZip"
                         />
-                        <span class="small text-danger" v-if="v$.schoolZip.$error"
+                        <span
+                          class="small text-danger"
+                          v-if="v$.schoolZip.$error"
                           >{{ v$.schoolZip.$errors[0].$message }}
                         </span>
                       </div>
@@ -262,6 +270,35 @@
                         >{{ v$.course.$errors[0].$message }}
                       </span>
                     </div>
+                    <div class="form-group">
+                      <label class="py-2" for="status">Status</label>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="exampleRadios"
+                        id="exampleRadios1"
+                        value="full-time"
+                        v-model="info.status"
+                        checked
+                      />
+                      <label class="form-check-label" for="exampleRadios1">
+                        Full-time
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="exampleRadios"
+                        id="exampleRadios2"
+                        value="part-time"
+                      />
+                      <label class="form-check-label" for="exampleRadios2">
+                        Part-time
+                      </label>
+                    </div>
+                  </div>
                   </div>
                   <div class="row all">
                     <div class="col-md-1"></div>
@@ -342,7 +379,7 @@ export default {
   components: {},
   data() {
     return {
-      nowDate: new Date().toISOString().slice(0,10)
+      nowDate: new Date().toISOString().slice(0, 10),
     };
   },
   setup() {
@@ -404,7 +441,7 @@ export default {
       if (!this.v$.$error) {
         window.location.reload();
         // console.log(info)
-      } 
+      }
       // else {
       //   alert("fail");
       // }
